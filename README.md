@@ -1,5 +1,5 @@
 # AA14 - Grupo D
-## Starup Relámpago
+## Startup Relámpago
 --- 
 ### Consignas
 Registro / Login
