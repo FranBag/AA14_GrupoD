@@ -274,7 +274,6 @@ input.success {
     }
 }
 
-/* Pulso genérico (queda por si luego lo usan desde JS o clases futuras) */
 @keyframes pulse {
     0%, 100% {
         opacity: 1;
