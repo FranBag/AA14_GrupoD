@@ -61,6 +61,19 @@ export function setRejectedState(inputId) {
   statusElement.classList.add("rejected");
 }
 
+// Limpia el estado de un campo.
+export function clearFieldState(inputId) {
+  const inputElement = document.getElementById(inputId);
+  if (!inputElement) {
+    console.error(`No se encontró el input con id: ${inputId}`);
+    return;
+  }
+  const statusElement = inputElement.closest(".campo-formulario").querySelector(".estado-campo");
+  if (!statusElement) {
+    return;
+  }
 
+  statusElement.classList.remove("checking", "approved", "rejected");
+}
 
 
