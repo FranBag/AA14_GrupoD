@@ -362,3 +362,73 @@ input[aria-invalid="true"] {
     .contenedor-auth { padding: 1.25rem; }
     .boton-conmutar { padding: 10px; font-size: 13px; }
 }
+
+
+.estado-campo {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    transform: scale(0);
+    opacity: 0;
+}
+
+.estado-campo::before {
+    content: '';
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.estado-campo.checking {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.estado-campo.checking::before {
+    background-color: #9ca3af; 
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.estado-campo.approved {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.estado-campo.approved::before {
+    background-color: #22c55e;
+    content: '✓';
+    color: white;
+    font-size: 10px;
+    text-align: center;
+    line-height: 12px;
+    font-weight: bold;
+}
+
+.estado-campo.rejected {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.estado-campo.rejected::before {
+    background-color: #ef4444; 
+    content: '×';
+    color: white;
+    font-size: 10px;
+    text-align: center;
+    line-height: 12px;
+    font-weight: bold;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
+}
